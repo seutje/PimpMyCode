@@ -1,7 +1,7 @@
 Dependências:
 -------------
 
-*uglify-js*
-*connect-form*
-*express*
+* uglify-js
+* connect-form
+* express
 
