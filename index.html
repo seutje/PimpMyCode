@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pimp My Code</title>
+    <meta name="description" content="It's a code pimper with uglify option!">
+    <meta name="author" content="Leo Balter">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/codemirror.css">
+    <script src="js/codemirror.js"></script>
+    <link rel="stylesheet" href="css/codemirror-night.css">
+    <script src="js/codemirror-javascript.js"></script>
+
+    <script src="js/jquery-1.6.2.min.js"></script>
+
+
+    <!-- Le fav and touch icons -->
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <!--<link rel="apple-touch-icon" href="images/apple-touch-icon.png">-->
+    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">-->
+    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">-->
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="fill">
+        <div class="container">
+            <a class="brand" href="#">Pimp My Code</a>
+            <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <h1>Pimp My Code!</h1>
+
+        <p>Uglify or Beautify your code, it's your choice...</p>
+    </div>
+
+    <form id="pimpForm" class="form-stacked" action="http://www.iloop.com.br:3000/" novalidate autocomplete="off" method="POST" target="_blank">
+        <textarea name="toPimp" id="code" tabindex="1"></textarea>
+
+        <div class="row">
+            <button class="btn danger span16 large" id="pimpit" type="submit">Pimp it!</button>
+        </div>
+
+        <div class="row">
+            <h2>Options</h2>
+
+            <div class="span6">
+                <div class="clearfix">
+                    <div class="input">
+                        <ul class="inputs-list">
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="beautify" name="uglifyopts">
+                                    <span>beautify</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="lift" name="uglifyopts">
+                                    <span>lift-vars</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="unsafe" name="uglifyopts">
+                                    <span>unsafe</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="inline" name="uglifyopts">
+                                    <span>inline-script</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <footer>
+        <p>&copy; WTFPL 2011</p>
+    </footer>
+
+</div>
+<!-- /container -->
+
+<script src="js/my.js"></script>
+
+</body>
+</html>
