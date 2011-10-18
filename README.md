@@ -1,4 +1,4 @@
-#PimpMyCode is a Uglify parser.
+#PimpMyCode is a [UglifyJS](https://github.com/mishoo/UglifyJS "UglifyJS Github Page") parser.
 
 ##Options
 
@@ -24,3 +24,6 @@ You can serve your own node service (check the nodeServices folder) and the page
 
 Don't abuse my webservice, I pay too low on my VPS that I can't handle a heavy use of this *experiment*.
 
+## License is WTFPL
+
+### Restricted to UglifyJS's license
