@@ -19,9 +19,6 @@ app.get('/upload', function(req, res) {
 
 app.post('/upload', function(req, res, next) {
 
-  // connect-form adds the req.form object
-  // we can (optionally) define onComplete, passing
-  // the exception (if any) fields parsed, and files parsed
   req.form.complete(function(err, fields, files) {
     if (err) {
       next(err);
@@ -30,22 +27,18 @@ app.post('/upload', function(req, res, next) {
 
       var orig_code = fs.readFileSync(files.file.path, 'utf-8');
 
-      var ast = jsp.parse(orig_code); // parse code and get the initial AST
-      ast = pro.ast_mangle(ast); // get a new AST with mangled names
-      ast = pro.ast_squeeze(ast); // get an AST with compression optimizations
-      var final_code = pro.gen_code(ast); // compressed code here
+      var ast = jsp.parse(orig_code);
+      ast = pro.ast_mangle(ast);
+      ast = pro.ast_squeeze(ast);
+      var final_code = pro.gen_code(ast);
 
-      /*
-       * other options in https://github.com/mishoo/UglifyJS
-       */
       res.charset = 'utf-8';
       res.contentType(files.file.path);
-      res.send(final_code); // now this sends the final code to screen
+      res.send(final_code);
     }
   });
 
-  // We can add listeners for several form
-  // events such as "progress"
+  //Callback informing upload file progress
   req.form.on('progress', function(bytesReceived, bytesExpected) {
     var percent = (bytesReceived / bytesExpected * 100) | 0;
     process.stdout.write('Uploading: %' + percent + '\r');
