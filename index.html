@@ -1,136 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Pimp My JS</title>
-    <meta name="description" content="It's a code pimper with uglify option!">
-    <meta name="author" content="Leo Balter">
+  <meta charset="utf-8">
+  <title>Pimp My JS</title>
+  <meta name="description" content="It's a code pimper with uglify option!">
+  <meta name="author" content="Leo Balter">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-        }
-    </style>
+  <!-- Le styles -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+    }
+  </style>
 
-    <link rel="stylesheet" href="css/codemirror.css">
-    <script src="js/codemirror.js"></script>
-    <link rel="stylesheet" href="css/codemirror-night.css">
-    <script src="js/codemirror-javascript.js"></script>
+  <link rel="stylesheet" href="css/codemirror.css">
+  <script src="js/codemirror.js"></script>
+  <link rel="stylesheet" href="css/codemirror-night.css">
+  <script src="js/codemirror-javascript.js"></script>
 
+  <script type="text/javascript">
 
-    </head>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26406401-1']);
+    _gaq.push(['_setDomainName', '.com.br']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</head>
 
 <body>
 
 <div class="topbar">
-    <div class="fill">
-        <div class="container">
-            <a class="brand" href="http://iloop.com.br">Pimp My JS</a>
-            <ul class="nav">
-                <li class="active"><a href="http://iloop.com.br">Home</a></li>
-                <li><a href="https://github.com/leobalter/PimpMyCode">Github</a></li>
-            </ul>
-        </div>
+  <div class="fill">
+    <div class="container">
+      <a class="brand" href="http://iloop.com.br">Pimp My JS</a>
+      <ul class="nav">
+        <li class="active"><a href="http://iloop.com.br">Home</a></li>
+        <li><a href="https://github.com/leobalter/PimpMyCode">Github</a></li>
+      </ul>
     </div>
+  </div>
 </div>
 
 
 <div class="container">
 
-    <h1>Uglify or Beautify your JavaScript, it's your choice...</h1>
+  <h1>Uglify or Beautify your JavaScript, it's your choice...</h1>
 
-    <form id="pimpForm" class="form-stacked" action="http://www.iloop.com.br:3000/" novalidate autocomplete="off"
-          method="POST" target="_blank">
-        <textarea name="toPimp" id="code" tabindex="1"></textarea>
+  <form id="pimpForm" class="form-stacked" action="http://www.iloop.com.br:3000/" novalidate autocomplete="off"
+        method="POST" target="_blank">
+    <textarea name="toPimp" id="code" tabindex="1"></textarea>
 
-        <div class="row">
-            <button class="btn danger span16 large" id="pimpit" type="submit">Pimp it!</button>
-        </div>
+    <div class="row">
+      <button class="btn danger span16 large" id="pimpit" type="submit">Pimp it!</button>
+    </div>
 
-        <div class="row">
-            <h2>Options</h2>
+    <div class="row">
+      <h2>Options</h2>
 
-            <div class="span7">
-                <div class="clearfix">
-                    <div class="input">
-                        <ul class="inputs-list">
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="beautify" name="uglifyopts">
-                                    <span>beautify</span>
-                                </label>
+      <div class="span7">
+        <div class="clearfix">
+          <div class="input">
+            <ul class="inputs-list">
+              <li>
+                <label>
+                  <input type="checkbox" value="beautify" name="uglifyopts">
+                  <span>beautify</span>
+                </label>
                                 <span class="help-block">
-                                  Invert the minification process: turns the ugly JS to a <strong>pretty printed</strong> code. *
+                                  Invert the minification process: turns the ugly JS to a <strong>pretty
+                                  printed</strong> code. *
                                 </span>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="lift" name="uglifyopts">
-                                    <span>lift-vars</span>
-                                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="lift" name="uglifyopts">
+                  <span>lift-vars</span>
+                </label>
                                 <span class="help-block">
                                   Merge and move <code>var</code> declarations to the top of the scope
                                 </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="span7">
-                <div class="clearfix">
-                    <div class="input">
-                        <ul class="inputs-list">
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="unsafe" name="uglifyopts">
-                                    <span>unsafe</span>
-                                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="span7">
+        <div class="clearfix">
+          <div class="input">
+            <ul class="inputs-list">
+              <li>
+                <label>
+                  <input type="checkbox" value="unsafe" name="uglifyopts">
+                  <span>unsafe</span>
+                </label>
                                 <span class="help-block">
                                   <em>Black Magic Voodoo</em> for better compression
                                 </span>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="inline" name="uglifyopts">
-                                    <span>inline-script</span>
-                                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="inline" name="uglifyopts">
+                  <span>inline-script</span>
+                </label>
                                 <span class="help-block">
                                   Escape <code>&lt;/script></code> to prevent errors in inline scripts
                                 </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+              </li>
+            </ul>
+          </div>
         </div>
-    </form>
-
-    <h2>How does this works?</h2>
-
-    <div class="row">
-      <div class="span4">
-          <p>You send your Javascript code, ugly or not:</p>
-      </div>
-      <div class="span12">
-          <script src="https://gist.github.com/1297100.js?file=normal.js"> </script>
       </div>
     </div>
+  </form>
 
-    <div class="row">
-      <div class="span4">
-        <p>Then you can uglify it:</p>
-      </div>
-      <div class="span12">
-          <script src="https://gist.github.com/1297100.js?file=ugly.js"></script>
-      </div>
+  <h2>How does this works?</h2>
+
+  <div class="row">
+    <div class="span4">
+      <p>You send your Javascript code, ugly or not:</p>
     </div>
+    <div class="span12">
+      <script src="https://gist.github.com/1297100.js?file=normal.js"></script>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <p>Then you can uglify it:</p>
+    </div>
+    <div class="span12">
+      <script src="https://gist.github.com/1297100.js?file=ugly.js"></script>
+    </div>
+  </div>
 
   <div class="row">
     <div class="span4">
@@ -149,7 +167,8 @@
 
   <div class="row">
     <div class="span4">
-      <p>There're some code Uglify can compress but it's possible to break your code, so if you want it on, you have to check this option</p>
+      <p>There're some code Uglify can compress but it's possible to break your code, so if you want it on, you have to
+        check this option</p>
 
       <p>This will be ignored if you check the beautify option</p>
     </div>
@@ -162,7 +181,8 @@
 
   <div class="row">
     <div class="span4">
-      <p>You can prevent showing <code>&lt;/script></code> in your code, turn on this option and Uglify will escape it!</p>
+      <p>You can prevent showing <code>&lt;/script></code> in your code, turn on this option and Uglify will escape it!
+      </p>
     </div>
     <div class="span12">
       <script src="https://gist.github.com/1297100.js?file=inline.js"></script>
@@ -174,9 +194,14 @@
   <div class="row">
     <div class="span4">
       <p>As well said in UglifyJS documentation:</p>
-      <p>"merge and move <code>var</code> declarations to the scop of the scope; discard unused function arguments or variables; discard unused (named) inner functions. It also tries to merge assignments following the var declaration into it.</p>
 
-      <p>Note that although it might increase the file size (on jQuery it gains 865 bytes, 243 after gzip) it’s technically more correct: in certain situations, dead code removal might drop variable declarations, which would not happen if the variables are lifted in advance."</p>
+      <p>"merge and move <code>var</code> declarations to the scop of the scope; discard unused function arguments or
+        variables; discard unused (named) inner functions. It also tries to merge assignments following the var
+        declaration into it.</p>
+
+      <p>Note that although it might increase the file size (on jQuery it gains 865 bytes, 243 after gzip) it’s
+        technically more correct: in certain situations, dead code removal might drop variable declarations, which would
+        not happen if the variables are lifted in advance."</p>
     </div>
     <div class="span12">
       <script src="https://gist.github.com/1297100.js?file=liftVars.js"></script>
@@ -192,29 +217,12 @@
     </div>
   </div>
 
-    <footer>
-        <p>&copy; WTFPL 2011</p>
-    </footer>
+  <footer>
+    <p>&copy; WTFPL 2011</p>
+  </footer>
 
 </div>
 <!-- /container -->
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-26406401-1']);
-    _gaq.push(['_setDomainName', '.com.br']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
 
 <script src="js/my.js"></script>
 
