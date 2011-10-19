@@ -90,7 +90,7 @@
                                     <span>beautify</span>
                                 </label>
                                 <span class="help-block">
-                                  Invert the minimization process: turns the ugly JS to a <strong>pretty printed</strong> code. *
+                                  Invert the minification process: turns the ugly JS to a <strong>pretty printed</strong> code. *
                                 </span>
                             </li>
                             <li>
@@ -99,7 +99,7 @@
                                     <span>lift-vars</span>
                                 </label>
                                 <span class="help-block">
-                                  Merge and move <code>var</code> declarations to the scop of the scope
+                                  Merge and move <code>var</code> declarations to the top of the scope
                                 </span>
                             </li>
                         </ul>
@@ -116,7 +116,7 @@
                                     <span>unsafe</span>
                                 </label>
                                 <span class="help-block">
-                                  <em>Black Magic Voodoo</em> to better compression
+                                  <em>Black Magic Voodoo</em> for better compression
                                 </span>
                             </li>
                             <li>
@@ -135,7 +135,7 @@
         </div>
     </form>
 
-    <h2>How this works?</h2>
+    <h2>How does this works?</h2>
 
     <div class="row">
       <div class="span4">
@@ -161,18 +161,18 @@
 
       <p>Yeah, it's not the same original code, but you can read it now, right?</p>
 
-      <p>This doesn't bring beauty to Dart of CoffeeScript codes, never.</p>
+      <p>This doesn't bring beauty of Dart of CoffeeScript codes, ever.</p>
     </div>
     <div class="span12">
       <script src="https://gist.github.com/1297100.js?file=beautify.js"></script>
     </div>
   </div>
 
-  <h2>What you mean by unsafe?</h2>
+  <h2>What do you mean by unsafe?</h2>
 
   <div class="row">
     <div class="span4">
-      <p>There're some code Uglify can compress but it's possible to break your code, so if you wan't it on, you have to check this option</p>
+      <p>There're some code Uglify can compress but it's possible to break your code, so if you want it on, you have to check this option</p>
 
       <p>This will be ignored if you check the beautify option</p>
     </div>
@@ -199,7 +199,7 @@
       <p>As well said in UglifyJS documentation:</p>
       <p>"merge and move <code>var</code> declarations to the scop of the scope; discard unused function arguments or variables; discard unused (named) inner functions. It also tries to merge assignments following the var declaration into it.</p>
 
-      <p>Note that although it might increase the image size (on jQuery it gains 865 bytes, 243 after gzip) it’s technically more correct: in certain situations, dead code removal might drop variable declarations, which would not happen if the variables are lifted in advance."</p>
+      <p>Note that although it might increase the file size (on jQuery it gains 865 bytes, 243 after gzip) it’s technically more correct: in certain situations, dead code removal might drop variable declarations, which would not happen if the variables are lifted in advance."</p>
     </div>
     <div class="span12">
       <script src="https://gist.github.com/1297100.js?file=liftVars.js"></script>
